@@ -1,0 +1,20 @@
+{
+  "name": "meeting-time-bot",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "description": "Discord /meeting-time slash commands and reminders on Cloudflare Workers + D1 (free plan, no card)",
+  "scripts": {
+    "test": "node --test --disable-warning=ExperimentalWarning \"test/*.test.js\"",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:migrate:local": "wrangler d1 migrations apply meeting-bot --local",
+    "db:migrate:remote": "wrangler d1 migrations apply meeting-bot --remote",
+    "register": "node scripts/register-commands.mjs",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}

@@ -1,0 +1,20 @@
+name = "meeting-time-bot"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+
+# Runs the reminder scheduler every minute.
+[triggers]
+crons = ["* * * * *"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "meeting-bot"
+# Replace with the id printed by `npx wrangler d1 create meeting-bot`.
+# (Any placeholder works for local dev and tests.)
+database_id = "your-db-id"
+
+[vars]
+DISCORD_API_BASE = "https://discord.com/api/v10"
+# DISCORD_PUBLIC_KEY is not secret, but keeping it in a secret avoids committing it:
+#   npx wrangler secret put DISCORD_PUBLIC_KEY
+#   npx wrangler secret put DISCORD_BOT_TOKEN

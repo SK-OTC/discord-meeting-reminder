@@ -1,0 +1,11 @@
+# Copy to .dev.vars for `wrangler dev`. Never commit .dev.vars.
+DISCORD_PUBLIC_KEY=your_application_public_key_hex
+DISCORD_BOT_TOKEN=your_bot_token
+
+# Used only by `npm run register` (run from your own machine):
+DISCORD_APPLICATION_ID=your_application_id
+# Optional: register commands for one server only (updates instantly while testing)
+# DISCORD_GUILD_ID=your_test_server_id
+
+# Google Calendar sync (optional). The same value goes in every meeting organizer's Apps Script property BOT_SECRET.
+# BRIDGE_SECRET=long_random_string
